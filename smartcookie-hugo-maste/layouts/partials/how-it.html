@@ -1,0 +1,29 @@
+<section class="how-it">
+    <div class="container">
+        <h2 class="how-it__title">{{.Params.how.title}}</h2>
+        <div class="how-it__wrap">
+            <div class="how-it__imgs">
+                <div class="how-imgs">
+                    {{range $index, $value := .Params.how.images}}
+                        <img class="how-it__img {{if eq $index 0}} is-active {{end}}" src="{{.image}}">
+                    {{end}}
+
+                </div>
+            </div>
+            <div class="how-it__descr" id="el">
+                {{range $index, $value := .Params.how.descriptions}}
+                    <div class="how-it__text">                        
+                        <h3><img src="{{.icon}}" alt="{{.heading}}"> {{.heading}}</h3>
+                        <p >{{.desc | markdownify }}</p>
+
+                        {{if .iconLeft}}<div class="img-float {{.posIcon}}"><img src="{{.iconLeft}}" alt="{{.heading}}"></div> {{end}}
+                    </div>
+
+                {{end}}
+
+               
+            </div>
+        </div>
+    </div>
+</section>
+

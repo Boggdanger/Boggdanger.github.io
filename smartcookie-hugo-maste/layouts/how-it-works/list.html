@@ -1,0 +1,77 @@
+{{ define "main" }}
+{{ partial "header.html" . }}
+
+
+
+
+<section class="section section-connection pt-160">
+	<div class="container">
+		<h1 class="h1">{{.Params.connection.title}}</h1>
+		<p class="connection-1">{{.Params.connection.subHeading}}</p>
+
+		<div class="row-main">
+			<div class="row owl-main owl-theme">
+				{{ $last_index := .Params.connection.items  }}			
+				{{ range $index, $value := .Params.connection.items }}
+					{{ $c := add $index 1 }}
+					<div class="{{if eq $index 0 }} col-12 {{else if eq $c (len $last_index)}} col-12 {{ else }} col-4  {{end}} {{.class}}">
+						<img src="{{.image}}" alt="">
+						<p class="connection-p">{{.text | markdownify }}</p>
+						{{ range .arrow }}
+							<img src="{{.image}}" alt="" class="arrow {{.class}}">
+						{{end}}
+					</div>
+				{{end}}
+			</div>
+
+			<div class="col-4 d-n">
+				{{ range $index, $value := .Params.connection.bottom }}
+					<img src="{{ .image }}" alt="" class="{{ .class }}">
+					{{ with .text }}
+						<p class="connection-p ">{{ . }}</p>
+					{{ end }}
+				{{end}}
+			</div>
+
+		</div>
+	</div>
+</section>
+{{- partial "give-it-try.html" . -}}
+
+
+
+
+<section class="how-works">
+	<div class="container">
+		<h1 class="how-works__title">{{.Title}}</h1>
+		<div class="how-works__wrap">
+
+			{{ range .Params.howIt }}
+				
+			<div class="how-works__row">
+				<div class="how-works__info">
+					<img src="{{.number}}" alt="" class="circle">
+					<div class="how-works__text mb-180">{{.text | markdownify}}</div>
+
+				</div>
+				<div class="how-works__img-wrap">
+										
+						<img class="how-works__img" src="{{.image}}">
+						<!-- <div class="gif-image">
+							<img class="how-works__img" src="{{ .gifImage }}">
+						</div>
+						 -->
+				</div>
+			</div>
+
+			{{end}}
+		</div>
+	</div>
+</section>
+
+
+
+
+{{ end }}
+
+

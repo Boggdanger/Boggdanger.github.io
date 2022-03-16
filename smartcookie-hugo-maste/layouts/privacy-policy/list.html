@@ -1,0 +1,47 @@
+{{ define "main" }}
+{{ partial "header.html" . }}
+
+<section class="faq">
+	<div class="container">
+		<h1 class="faq__title">
+			<font class="" style="vertical-align: inherit;">{{.Title}}</font>
+		</h1>
+		<div class="faq__wrap">
+			<div class="faq__aside">
+				<ul class="faq__nav">
+					{{ range .Params.faqs }}
+						<li><a class="faq__nav-link" href="#{{.id}}-block">{{.title}}</a></li>
+					{{end}}
+				</ul>
+			</div>
+
+			<div class="faq__main">
+				{{ range .Params.faqs }}
+				<h2 class="faq__subtitle" id="{{.id}}-block">{{.title}}</h2>
+					{{range .qa }}
+						<div class="faq__item">
+							<h3 class="faq__item-title">{{ .que }}</h3>
+							<p class="faq__text">{{ .ans | safeHTML }}
+								{{if .list}}
+								<ol class="faq__text">
+									{{range .list}}
+									<li>{{.}} </li>
+									{{end}}
+								</ol>
+								{{end}}
+
+							</p>
+						</div>
+					{{end}}
+				{{end}}
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+{{ end }}
+
+

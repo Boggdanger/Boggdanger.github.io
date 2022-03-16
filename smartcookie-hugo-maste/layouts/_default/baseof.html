@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+
+    {{- partial "head.html" . -}}
+        <div class="mobile-menu">
+            <div class="container">
+                <div class="mobile-menu__header">
+                    <a class="mobile-menu__logo" href="/">
+                        <picture>
+                            <source srcset="/img/logo-mini-w.svg" media="(max-width: 567px)"><img src="/img/logo-w.svg">
+                        </picture>
+                    </a>
+                    <button class="mobile-menu__close js-close-menu" type="button"></button>
+                </div>
+                <div class="mobile-menu__list">
+
+                    {{- $currentPage := . -}}
+                    {{ $url1 := $currentPage.URL }}
+                    {{ range .Site.Menus.main -}}
+                        <a class="mobile-menu__link {{ if eq  $url1 .URL  }} active {{ end }}" href="{{ .URL  | absLangURL }}">{{ .Name }}</a>
+                    {{end}}
+                   
+                 
+        {{ if .Site.IsMultiLingual }}
+        <select class="header__select" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+            {{ range .Site.Languages }}
+                {{ if eq . $.Site.Language }}
+                    <option value="" title="">{{ .LanguageName }}</option>                        
+                {{ end }}
+            {{ end }}
+            {{ range $.Translations }}
+                <option value="{{ .Permalink }}" title="{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</option>
+            {{ end }}
+        </select>
+    {{ end }}
+
+                
+                    
+                </div>
+                <div class="mobile-menu__copy">Copyright © <script>
+                    document.write(new Date().getFullYear())
+                </script>{{ with .Site.Params.footer.copyright }} {{ . | safeHTML }} {{ end }}</div>
+            </div>
+        </div>
+
+            {{- block "main" . }}{{- end }}
+
+        
+        {{- partial "footer.html" . -}}
+    </body>
+</html>

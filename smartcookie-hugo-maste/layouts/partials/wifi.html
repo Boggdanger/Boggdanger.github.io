@@ -1,0 +1,39 @@
+<section class="wifi">
+    <div class="container">
+        <div class="wifi__wrap">
+            <div class="wifi__slider glide">
+                <div class="glide__track" data-glide-el="track">
+                    <div class="glide__slides">
+                        {{range $index, $value := .Params.wifi.images}}
+                            <img class="wifi__slide glide__slide" src="{{.}}">
+                        {{end}}
+                    </div>
+                </div>
+                <div class="glide__arrows" data-glide-el="controls">
+                    <div class="glide__arrow glide__arrow--left" data-glide-dir="&lt;"></div>
+                    <div class="glide__arrow glide__arrow--right" data-glide-dir="&gt;"></div>
+                </div>
+                <div class="glide__bullets" data-glide-el="controls[nav]">
+                    {{range $index, $value := .Params.wifi.images}}
+                        <div class="glide__bullet" data-glide-dir="={{$index}}"></div>
+                    {{end}}
+                </div>
+            </div>
+            <div class="wifi__info">
+                <h2 class="wifi__title">{{.Params.wifi.title}}</h2>
+                <h3 class="wifi__subtitle">{{ .Params.wifi.text}}</h3>
+                <ul class="wifi__list">
+                    {{range $index, $value := .Params.wifi.list}}
+                        <li>{{.}}</li>
+                    {{end}}
+                </ul>
+                <div class="wifi__bottom">
+                    <div class="wifi__price">
+                        <del> {{ .Params.wifi.priceBefore}}</del><span> {{ .Params.wifi.priceCurrent}}</span>
+                    </div>
+                    <a class="home-promo__btn common-btn" href="{{ .Params.wifi.btnUrl}}">{{ .Params.wifi.btnText}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
