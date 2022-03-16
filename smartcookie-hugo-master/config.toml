@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://boggdanger.github.io/smartcookie-hugo-master"
 languageCode = "en-us"
 title = "SmartCookie.App"
 #hasCJKLanguage = true
