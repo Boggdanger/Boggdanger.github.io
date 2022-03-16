@@ -1,0 +1,17 @@
+
+<section class="section give-it">
+	<div class="container">
+        <div class="section-headeing">            
+            <h2 class="title">{{.Params.gitveItTry.heading}}</h2>
+            <p class="subtitle">{{.Params.gitveItTry.subHeading}}</p>
+        </div>
+        {{ with .Params.gitveItTry.gplay }}
+            <div class="text-center">
+                <a class="btn btn-gplay" href="https://play.google.com/store/apps/details?id=app.smartcookie.beta"> 
+                    <img src="/img/gplay.svg" alt="google-play">
+                </a>
+            </div>
+        {{ end }}
+
+    </div>
+</section>

@@ -1,0 +1,22 @@
+{{$data := .Params.SmartCookieApp}}
+<section class="app section">
+    <div class="container">
+        <div class="row df-cloumn">
+            <div class="col-4 image-left">
+                <img src="{{$data.image}}" alt="app" class="img-fluid">
+            </div>
+            <div class="col-8 app-content">
+                <h5>{{$data.subTittle}}</h5>
+                <h2>{{$data.title}}</h2>
+                <p>{{$data.text | markdownify}}</p>
+
+                
+                  
+                <a class="btn btn-gplay" href="https://play.google.com/store/apps/details?id=app.smartcookie.beta"> 
+                    <img src="/img/gplay.svg" alt="google-play" >
+                </a>
+            </div>
+        </div>
+ 
+    </div>
+</section>

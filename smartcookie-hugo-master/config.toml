@@ -1,0 +1,86 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "SmartCookie.App"
+#hasCJKLanguage = true
+defaultContentLanguage = "en"
+author = "Adrien Laurent"
+# Define the number of posts per page
+paginate = 4
+
+[params.company]
+name = "SmartCookie.App"
+
+
+[permalinks]
+	page = "/:title/"
+	about = "/:filename/"
+    post = "/blog/:slug"
+
+	
+[Languages]
+[Languages.en]
+title = "SmartCookie.App"
+weight = 0
+languagename = "English"
+languagecode = "en"
+
+[[Languages.en.menu.main]]
+url = "/how-it-works/"
+name = "How it works"
+weight = 1
+# [[Languages.en.menu.main]]
+# url = "/faq/"
+# name = "FAQ"
+# weight = 2
+[[Languages.en.menu.main]]
+url = "/contact-us/"
+name = "Contact"
+weight = 3
+[[Languages.en.menu.main]]
+url = "https://careers.smartrecruiters.com/SmartCookieWifi"
+name = "Career"
+weight = 4
+[[Languages.en.menu.main]]
+url = "/Privacy-Policy/"
+name = "Privacy Policy"
+weight = 5
+
+
+[Languages.fr]
+title = "SmartCookieWifi Inc."
+weight = 1
+languagename = "Français"
+languagecode = "fr"
+
+[[Languages.fr.menu.main]]
+url = "/fr/how-it-works/"
+name = "Fonctionnement"
+weight = 1
+[[Languages.fr.menu.main]]
+url = "/fr/faq/"
+name = "FAQ"
+weight = 2
+[[Languages.fr.menu.main]]
+url = "/fr/contact-us/"
+name = "Contact"
+weight = 3
+[[Languages.fr.menu.main]]
+url = "https://careers.smartrecruiters.com/SmartCookieWifi"
+name = "Carrière"
+weight = 4
+[[Languages.fr.menu.main]]
+url = "/Privacy-Policy/"
+name = "Politique de vie privée"
+weight = 5
+
+[Languages.en.params.footer]
+   copyright = "SmartCookieWifi Inc. All rights reserved."
+
+[Languages.fr.params.footer]
+   copyright = "SmartCookieWifi Inc. Tous droits reservés."
+
+[[params.socail]]
+url = ""
+svgcod = ""
+
+

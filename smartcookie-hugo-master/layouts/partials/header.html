@@ -1,0 +1,37 @@
+<header class="header">
+    <div class="container">
+        <div class="header__wrap">
+            <a class="header__logo" href="/{{ .Language.Lang }}">
+                <picture>
+                    <source srcset="/img/logo-mini.png" media="(max-width: 567px)"><img src="/img/logo.png">
+                </picture>
+            </a>
+            <nav class="header__nav">
+                {{- $currentPage := . -}}
+                {{ $url1 := $currentPage.URL }}
+                {{ range .Site.Menus.main -}}
+                    <a class="header__nav-link {{ if eq  $url1 .URL  }} active {{ end }}" href="{{ .URL  | absLangURL }}">{{ .Name }}</a>
+                {{end}}
+            </nav>
+            
+            
+                {{ if .Site.IsMultiLingual }}
+                <select class="header__select" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+                    {{ range .Site.Languages }}
+                        {{ if eq . $.Site.Language }}
+                            <option value="" title="">{{ .LanguageName }}</option>                        
+                        {{ end }}
+                    {{ end }}
+                    {{ range $.Translations }}
+                        <option value="{{ .Permalink }}" title="{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</option>
+                    {{ end }}
+                </select>
+            {{ end }}
+            <button class="header__menu-btn js-open-menu" type="button"></button>
+           
+
+            
+
+        </div>
+    </div>
+</header>
