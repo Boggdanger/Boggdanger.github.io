@@ -1,4 +1,4 @@
-baseURL = "https://boggdanger.github.io/smartcookie-hugo-master/"
+baseURL = "/"
 languageCode = "en-us"
 title = "SmartCookie.App"
 #hasCJKLanguage = true
@@ -37,7 +37,7 @@ url = "/contact-us/"
 name = "Contact"
 weight = 3
 [[Languages.en.menu.main]]
-url = "https://boggdanger.github.io/smartcookie-hugo-master"
+url = "https://careers.smartrecruiters.com/SmartCookieWifi"
 name = "Career"
 weight = 4
 [[Languages.en.menu.main]]
@@ -65,7 +65,7 @@ url = "/fr/contact-us/"
 name = "Contact"
 weight = 3
 [[Languages.fr.menu.main]]
-url = "https://boggdanger.github.io/smartcookie-hugo-master"
+url = "https://careers.smartrecruiters.com/SmartCookieWifi"
 name = "Carrière"
 weight = 4
 [[Languages.fr.menu.main]]
