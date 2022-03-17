@@ -69,6 +69,7 @@
 
 .home-promo__info {
     padding-top: 126px;
+    z-index: 10;
 }
 
 /* btn header */
@@ -100,6 +101,11 @@
     transition: box-shadow .5s ease;
 }
 
+.btn-gplay img {
+    width: 100%;
+    height: auto;
+}
+
 
 /* 
 .home-promo {
@@ -112,13 +118,23 @@
 } */
 
 .home-promo__picture {
-    width: 49%;
+    width: 48%;
 }
 
 .home-promo__picture img {
     margin-left: -41px;
     margin-top: -27px;
 }
+
+.features__item:nth-child(2) .features__img {
+    max-width: 127px;
+    margin-top: 7px;
+}
+
+.features__text {
+    line-height: 1.6em;
+}
+
 .features__img{
     margin-bottom: 45px;
 }
@@ -489,7 +505,34 @@ padding-bottom: 80px;
     margin-top: 10px;
 }
 
+@media only screen and (max-width: 1200px) {
+
+    .header__nav, .header .stylish-select-container, .header .header__select {
+        display: none;
+    }
+
+    .header__menu-btn {
+        display: inline-block;
+        margin-left: auto;
+    }
+
+    .how-it__text {
+        margin: 0 0 110px;
+    }
+
+    .home-promo__picture img {
+        margin-left: -41px;
+        margin-top: 12px;
+    }
+}
+
+
 @media only screen and (max-width: 1000px){
+
+
+    .home-promo {
+        padding-bottom: 280px;
+    }
 
     .header__menu-btn {
         display: inline-block;
@@ -501,37 +544,60 @@ padding-bottom: 80px;
 
     .home-promo:before{
         background-image: url(../img/hero-1000.svg);
-        background-size: 100% 625px;
+        background-size: 100% 705px;
     }
-    /* .home-promo:after   {
+    .home-promo:after   {
         content: "";
         background: linear-gradient(71.93deg, #D9E6F2 37.7%, #E6EFF8 83.28%);
-        height: 75%;
+        height: 500px;
         width: 100%;
         display: block;
         z-index: 0;
         position: absolute;
         top: 0px;
-    } */
+    }
     .home-promo__picture{
         max-width: 365px;
     }
     .home-promo__picture img{
-        margin-left: -35%;
+        position: absolute;
+        width: 375px;
+        right: 170px;
+        top: -65px;
+        margin-top: 0;
     }
     .img-float{
         display: none;
     }
 
+    .home-promo__info {
+        padding-top: 90px;
+    }
+
     .home-promo__title {
-        font-size: 46px;
+        font-size: 40px;
         line-height: 49px;
     }
 
+    /* btn header */
+    .btn-gplay {
+        width: 152px;
+        height: 44px;
+    }
+
+    .btn-gplay_hader {
+        margin-top: 45px;
+    }
+
+    .btn-gplay:not(:last-of-type) {
+        margin-right: 17px;
+    }
+
     .home-promo__text{
-        max-width: 400px;
+        max-width: 273px;
         font-size: 18px;
         margin-bottom: 10px;
+        line-height: 28px;
     }
 
     .how-it__title {
@@ -634,6 +700,19 @@ padding-bottom: 80px;
         top: 23%;
     }
 
+    .footer:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url('../img/bg-footer_1000.svg');
+        background-position: center;
+    }
+
 }
 
 @media (max-width: 991.98px) and (orientation: portrait){
@@ -660,8 +739,8 @@ padding-bottom: 80px;
         flex-direction: row;    
     }
     .home-promo:before{
-        background-size: 125% 750px;
-        content: "";
+        /* background-size: 125% 750px;
+        content: ""; */
         display: block;
     }
     .home-promo__picture {
@@ -737,7 +816,24 @@ padding-bottom: 80px;
 
 }
 
-@media only screen and (max-width: 767.98px){
+@media (max-width: 926px) {
+    .home-promo__picture img {
+        position: absolute;
+        width: 380px;
+        right: 0;
+        top: -40px;
+    }
+}
+
+
+@media (max-width: 768px) and (orientation: portrait) {
+    .how-it__text p{
+        text-align: center !important;
+    }
+}
+
+
+@media only screen and (max-width: 768px){
     .home-promo__wrap {
         flex-direction: column;
     }
@@ -750,53 +846,62 @@ padding-bottom: 80px;
     .home-promo:before{
         display: none;
     }
-    .home-promo:after{
+    /* .home-promo:after{
         height: 80%;
-    }
+    } */
+
     .home-promo__info{
         margin-bottom: -30px;
     }
+
     .home-promo__title{
-        font-weight: bold;
-        font-size: 30px;
-        line-height: 37px;
-        margin-bottom: 10px;
+        /* font-weight: bold; */
+        font-size: 40px;
+        /* line-height: 37px;
+        margin-bottom: 10px; */
     }
+
     .home-promo__text{
         font-weight: normal;
         font-size: 18px;
         line-height: 28px;
         margin-bottom: 10px;
     }
+
     .home-promo__info, .home-promo__text{
         text-align: left;
-        max-width: 100%;
+        max-width: 61%;
     }
+
     .home-promo:before{
         background-image: url(../img/hero-1000.svg);
-        background-size: 100% 625px;
+        background-size: 126% 705px;
         content: "";
+        display: block ;
     }
+
     .home-promo__picture{
         max-width: max-content;
     }
+
     .home-promo__picture img{
         margin-left: auto;
         /* width: auto; */
     }
+
     .how-it__title{
-        font-size: 30px;
+        font-size: 40px;
         line-height: 37px;
     }
+
     .how-it__descr{
-        width: 100%;
+        width: 50%;
         /* height: 400px;
         overflow-y: overlay; */
     }
     .how-it__text h3{
-        flex-direction: column;
+        /* flex-direction: column; */
         align-items: center;
-        font-size: 20px;
         line-height: 24px;
     }
     .how-it__text{
@@ -805,14 +910,14 @@ padding-bottom: 80px;
         text-align: center;
     }
     .how-it__text p{
-        text-align: center;
+        text-align: left;
     }
     .how-it__imgs{
         order: 0;
     }
 
     .features__title {
-        font-size: 30px;
+        font-size: 40px;
         line-height: 37px;
     }
     .features__item-title {
@@ -824,13 +929,14 @@ padding-bottom: 80px;
         line-height: 26px;
     }
     .app .image-left{
-        max-width: 80%;
+        max-width: 41%;
+        margin-right: 0px;
     }
     .app .app-content h5{
         font-size: 16px;
     }
     .app .app-content h2{
-        font-size: 30px;
+        font-size: 40px;
         line-height: 36px;
     }
 
@@ -915,5 +1021,145 @@ padding-bottom: 80px;
         width: 100%;
     }
 
+    /* header */
+    .home-promo:after {
+        height: 684px;
+    }
+
+    .home-promo {
+        padding-bottom: 590px;
+    }
+
+    .home-promo:before {
+        background-size: 126% 1175px;
+    }
+
+    .home-promo__info {
+        max-width: 100%;
+    }
+
+    .home-promo__info {
+        padding-top: 20px;
+    }
+
+    .home-promo__picture img {
+        width: 278px;
+        top: 230px;
+        right: 7%;
+    }
+
+    .home-promo__title {
+        font-size: 30px;
+    }
+
+    .home-promo__subtitle {
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+
+    .home-promo__title {
+        margin-bottom: 8px;
+    }
+
+    .btn-gplay_hader {
+        margin-top: 30px;
+    }
+
+    /* 2nd section */
+    .how-it__title {
+        font-size: 30px;
+    }
+
+    .how-it__text {
+        margin: 0 0 0px;
+    }
+
+    .how-it__descr {
+        width: 80%;
+    }
+
+    .how-it__text h3 {
+        font-size: 20px;
+    }
+
+    .features__title {
+        font-size: 30px;
+    }
+
+    .app .app-content h2 {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .app {
+        padding-top: 50px;
+    }
+
+    .img-fluid {
+        margin-bottom: 30px;
+    }
+
+    /* footer */
+    .footer {
+        padding-top: 123px;
+    }
+
+    .footer:before {
+        background-size: cover;
+        background-image: url('../img/bg-footer__mobile.svg');
+        height: 423px;
+        background-position-y: 0;
+    }
+
+    .footer::after {
+        display: none;
+    }
+
 }
 
+@media only screen and (max-width: 476px){ 
+    .home-promo__text {
+        max-width: 90%;
+    }
+}
+
+@media only screen and (max-width: 423px){ 
+    .footer {
+        padding-top: 116px;
+    }
+}
+
+@media only screen and (max-width: 360px){ 
+    .btn-gplay {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-gplay img {
+        width: 43%;
+        height: auto;
+    }
+
+    .btn-gplay:not(:last-of-type) {
+        margin-right: 0px;
+    }
+
+    .home-promo {
+        padding-bottom: 440px;
+    }
+
+    .app .image-left {
+        max-width: 90%;
+    }
+
+    .app {
+        padding-top: 86px;
+    }
+
+    .app-content .btn-gplay:last-of-type {
+        margin-top: 26px;
+    }
+}
