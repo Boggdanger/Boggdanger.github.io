@@ -190,6 +190,17 @@
 .home-promo:before{
     background-size: 100% 940px;
 }
+
+
+@media (min-width: 2520px) {
+    .home-promo:before {
+        background-size: 100% 741px;
+    }
+
+    .footer:before {
+        height: 130%;
+    }
+}
 .how-it__descr{
     width: 50%;
 }
@@ -470,6 +481,10 @@ padding-bottom: 80px;
     content: "";
     display: block !important;
     left: 44%;
+}
+
+.how-it {
+    padding-bottom: 184px;
 }
 
 
@@ -1129,8 +1144,22 @@ padding-bottom: 80px;
     }
 }
 
+
 @media only screen and (max-width: 360px){ 
-    .btn-gplay {
+
+    .header__logo img {
+        width: 90%;
+    }
+
+    .home-promo__picture img {
+        top: 279px;
+        width: 248px;
+    }
+
+    .app-content .btn-gplay:last-of-type, .btn-gplay_hader:last-of-type {
+        margin-top: 8px;
+    }
+    /* .btn-gplay {
         width: 100%;
         height: 60px;
         display: flex;
@@ -1145,7 +1174,7 @@ padding-bottom: 80px;
 
     .btn-gplay:not(:last-of-type) {
         margin-right: 0px;
-    }
+    } */
 
     .home-promo {
         padding-bottom: 440px;
@@ -1159,7 +1188,11 @@ padding-bottom: 80px;
         padding-top: 86px;
     }
 
+    .app .app-content p {
+        margin-bottom: 45px;
+    }
+/* 
     .app-content .btn-gplay:last-of-type {
         margin-top: 26px;
-    }
+    } */
 }

@@ -331,7 +331,7 @@ body, html {
     background: #fff;
     font-family: Proxima Nova, sans-serif;
     font-size: 16px;
-    min-width: 320px;
+    min-width: 280px;
     max-width: 100%;
     margin: 0;
     -webkit-font-smoothing: antialiased;
